@@ -19,6 +19,8 @@ return [
 
     'allowed_methods' => ['*'],
 
+    // 特定のドメインだけ許可したい場合
+    // 'allowed_origins' => ['https://yourfrontend.com', 'https://another-allowed-site.com'],
     'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
