@@ -9,7 +9,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get("/", [PostController::class, "index"])->name("top");
 Route::resource('posts', PostController::class)->only([
     'create', 'store', 'show', 'edit', 'update', 'destroy'
