@@ -11,7 +11,7 @@ class PostController extends Controller
     public function apiIndex(){
         return view("api.index");
     }
-    
+
     /**
      * Display a listing of the resource.
      */
@@ -36,8 +36,8 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "title" => ["required", "max:20"],
-            "content" => ["required", "max:20"]
+            "title" => "required"|"max:20",
+            "content" => "required"|"max:20",
         ]);
         $post = new Post();
         $form = $request->all();
@@ -69,8 +69,8 @@ class PostController extends Controller
     public function update(Request $request, $post_id)
     {
         $request->validate([
-            "title" => ["required", "max:20"],
-            "content" => ["required", "max:20"],
+            "title" => "required"|"max:20",
+            "content" => "required"|"max:20",
         ]);
         $post = Post::findOrFail($post_id);
         $form = $request->all();

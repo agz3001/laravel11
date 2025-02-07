@@ -30,8 +30,8 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "post_id" =>["required"],//|exists:comments排除すれば新規コメもいける
-            "body" => ["required", "max:50"]
+            "post_id" => "required",
+            "body" => "required"|"max:50"
         ]);
         $post = Post::findOrFail($request->post_id);
         $form = $request->all();
